@@ -251,59 +251,37 @@ function get_html(num) {
     <br>
     `;
 }
+const cardTitles = ["Chocolate Hampers", "Relaxation Hampers", "Bracelet Hampers", "Cupcake Hampers", "Ultimate Hampers", "Crafty Hampers", "Premium Hampers", "Cozy Hampers", "Decorative Hampers", "Personalized Hampers"];
+const cardTexts = ["For your chocolaty needs!", "For your relaxation needs!", "For your bracelet needs!", "For your cupcake needs!", "For your ultimate needs!", "For your crafty needs!", "For your premium needs!", "For your cozy needs!", "For your decorative needs!", "For your personalized needs!"];
+
+function get_dummy_product(num) {
+    return `
+    <div class="card col-md-3">
+        <img src="assets/images/gh_${num}.jpg" class="card-img-top" alt="Founder 1">
+        <div class="card-body">
+            <h5 class="card-title">${cardTitles[num]}</h5>
+            <p class="card-text">${cardTexts[num]}</p>
+        </div>
+    </div>
+    `;
+}
 
 $(document).ready(function() {
     const defaultHTML = `
     <div class="row">
-        <div class="card col-md-3">
-            <img src="assets/images/gh_0.jpg" class="card-img-top" alt="Founder 1">
-            <div class="card-body">
-                <h5 class="card-title">Chocolate Hampers</h5>
-                <p class="card-text">For your chocolaty needs!</p>
-            </div>
-        </div>
+        ${get_dummy_product(0)}
         <div class="col-md-1"></div>
-        <div class="card col-md-3">
-            <img src="assets/images/gh_1.jpg" class="card-img-top" alt="Founder 1">
-            <div class="card-body">
-                <h5 class="card-title">Chocolate Hampers</h5>
-                <p class="card-text">For your chocolaty needs!</p>
-            </div>
-        </div>
+        ${get_dummy_product(1)}
         <div class="col-md-1"></div>
-        <div class="card col-md-3">
-            <img src="assets/images/gh_2.jpg" class="card-img-top" alt="Founder 1">
-            <div class="card-body">
-                <h5 class="card-title">Chocolate Hampers</h5>
-                <p class="card-text">For your chocolaty needs!</p>
-            </div>
-        </div>
+        ${get_dummy_product(2)}
     </div>
     <br>
     <div class="row">
-        <div class="card col-md-3">
-            <img src="assets/images/gh_4.jpg" class="card-img-top" alt="Founder 1">
-            <div class="card-body">
-                <h5 class="card-title">Chocolate Hampers</h5>
-                <p class="card-text">For your chocolaty needs!</p>
-            </div>
-        </div>
+        ${get_dummy_product(3)}
         <div class="col-md-1"></div>
-        <div class="card col-md-3">
-            <img src="assets/images/gh_5.jpg" class="card-img-top" alt="Founder 1">
-            <div class="card-body">
-                <h5 class="card-title">Chocolate Hampers</h5>
-                <p class="card-text">For your chocolaty needs!</p>
-            </div>
-        </div>
+        ${get_dummy_product(4)}
         <div class="col-md-1"></div>
-        <div class="card col-md-3">
-            <img src="assets/images/gh_6.jpg" class="card-img-top" alt="Founder 1">
-            <div class="card-body">
-                <h5 class="card-title">Chocolate Hampers</h5>
-                <p class="card-text">For your chocolaty needs!</p>
-            </div>
-        </div>
+        ${get_dummy_product(5)}
     </div>
     `;
 
@@ -350,9 +328,7 @@ $(document).ready(function() {
         return price;
     }
 
-    const cardTitles = [];
-    const cardTexts = [];
-
+    
     // Function to filter and display hamper images based on selection
     function displayHamperImages(selection) {
         const filteredImages = hamperImages.filter(image => image.type === selection);
