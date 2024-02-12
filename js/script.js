@@ -243,7 +243,7 @@ function get_html(num) {
                 ${hamper_options}
                 <div class="price-and-cart">
                     <div class="card-text price" id="price3"></div>
-                    <a href="construction.html"><button type="button" class="btn btn-dark btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button></a>
+                    <a href="../construction.html"><button type="button" class="btn btn-dark btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button></a>
                 </div>
             </div>
         </div>
